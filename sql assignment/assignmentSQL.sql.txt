@@ -1,0 +1,62 @@
+1. WAQ to display the employee working in department no 20
+
+	select* from employee where deptno=20;
+
+
+
+2. WAQ to display the employee earning more than 2500.
+
+	select* from employee where salary>2500;
+
+
+
+
+3. WAQ to display all employee whose job type is software developer.
+
+	select* from employee where jobtype='software_developer';
+
+
+
+4. WAQ to display the employee working in department 8, 20 and 9.
+
+	select* from employee where deptno in(8,20,9);
+
+
+
+5. WAQ to display all employee whose name start with s.
+
+	select* from employee where fname like 's%';
+
+
+
+
+6. WAQ to display the employees whose first name having L as second character
+
+	select* from employee where fname like '_l%';
+
+
+
+
+7. WAQ to display the employees whose first name having atleast 2 'a' character
+
+	select* from employee where fname like '%a%a%';
+
+
+
+
+8. WAQ to display the employees whose last name is having 'e' as second last character
+
+	select* from employee where lname like '%e_';
+
+
+
+
+9. WAQ to display the employees whose last name is having exactly 5 character
+
+	select* from employee where lname like '_____';
+
+
+
+10. WAQ to display the employees whose salary is in between 2000000 and 300000000
+
+	select* from employee where salary between 2000000 and 300000000;
