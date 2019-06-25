@@ -1,4 +1,4 @@
-package com.covalense.java.Array;
+package com.covalense.java.array;
 
 public class Array2 {
 	public static void main(String[] args) {
