@@ -1,0 +1,98 @@
+body{
+    /* background: skyblue; */
+    /* background-image: linear-gradient(to bottom, green, blue, violet, red); */
+    /* background-image: radial-gradient(to bottom, black,blue,red); */
+    padding: 0%;
+    margin: 0%;
+}
+.heading{
+    color: aquamarine;
+    
+}
+#paragraph{
+    padding: 30px;
+    background-color: aquamarine;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-style: italic;
+    font-size: 5em;
+    font-weight: bolder;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: blueviolet;
+    -webkit-text-stroke-width: 3px;
+}
+input[type="text"], input[type="password"]{
+    height: 40px;
+    width: 300px;
+    font-size: 30px;
+    display: block;
+}
+input[type="Submit"]{
+    height: 40px;
+    width: 500px;
+}
+#box1{
+    background: gray;
+    padding: 60px;
+    border: 10px solid rebeccapurple;
+    margin: 50px;
+
+}
+#inner1{
+    height: 50px;
+    background: violet;
+    float: left;
+    width: 40%;
+    margin: 01px;
+    outline: 20px dotted gold;
+    box-shadow: 5px 5px 5px 8px black;
+
+}
+
+#inner2{
+    height: 500px;
+    background: chocolate;
+    float: right;
+    width: 60%;
+}
+#img{
+    border: 20px solid blue;
+    margin: auto;
+    border-radius: 50px;
+    display: block;
+    margin: 20px,20px,30px,20px;
+    width: 200px;
+    height: 200;
+    
+}
+nav{
+    width: 100%;
+    background: black;
+
+}
+ul{
+    margin: 0%;
+}
+li{
+    display: inline;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 25px;
+    color:blue;
+    padding: 30px;
+    display: inline-block;
+}
+input:hover{
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 40px;
+    background: lightcoral;
+    border: green;
+    box-shadow: 0 0 12px 8px green;
+}
+#login{
+    width: 100px;
+
+
+}
