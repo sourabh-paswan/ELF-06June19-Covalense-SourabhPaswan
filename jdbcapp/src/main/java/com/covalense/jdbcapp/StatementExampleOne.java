@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 //import java.sql.Driver;
+import java.sql.Statement;
 
 //import org.gjt.mm.mysql.Driver;
 
@@ -14,7 +14,7 @@ import java.sql.Statement;
 import lombok.extern.java.Log;
 
 @Log
-public class MyFirstJdbcProg {
+public class StatementExampleOne {
 
 	public static void main(String[] args) {
 		Connection con = null;
@@ -36,16 +36,15 @@ public class MyFirstJdbcProg {
 			 con = DriverManager.getConnection(dburl, "root", "root");
 			 log.info("connection impl class===>"+con.getClass());
 			// 3. issues sql queries via connection
-			String query = "select*from employee_info";
+			String query = "select*from employee_info"+"where id=1";
+			System.out.println(query);
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(query);
 
 			// 4. "process the results" returned by "SQL queries"
-			while (rs.next()) {
-//				log.info("ID (PK)          ===>" + rs.getInt("ID"));
-//				log.info("NAME             ===>" + rs.getString("NAME"));
-				log.info("ID (PK)          ===>" + rs.getInt(1));
-				log.info("NAME             ===>" + rs.getString(2));
+			while(rs.next()) {
+				log.info("ID (PK)          ===>" + rs.getInt("ID"));
+				log.info("NAME             ===>" + rs.getString("NAME"));
 				log.info("AGE              ===>" + rs.getInt("AGE"));
 				log.info("GENDER           ===>" + rs.getString("GENDER"));
 				log.info("SALARY           ===>" + rs.getInt("SALARY"));
@@ -57,15 +56,27 @@ public class MyFirstJdbcProg {
 				log.info("DOB              ===>" + rs.getDate("DOB"));
 				log.info("DEPT_ID (FK)     ===>" + rs.getInt("DEPT_ID"));
 				log.info("MANAGER_ID       ===>" + rs.getInt("MANAGER_ID"));
+
 			}
 
 		} catch (SQLException | InstantiationException | IllegalAccessException |ClassNotFoundException e) {
 			e.printStackTrace();
-		} /*
-			 * finally { // 5. close all"jdbc objects" try { if (con != null) { con.close();
-			 * } if (stmt != null) { stmt.close(); } if (rs != null) { rs.close(); } } catch
-			 * (SQLException e) { e.printStackTrace(); } }
-			 */
+		}  finally {
+			// 5. close all"jdbc objects"
+			try {
+				if (con != null) {
+					con.close();
+				}
+				if (stmt != null) {
+					stmt.close();
+				}
+				if (rs != null) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 
 	}
 
