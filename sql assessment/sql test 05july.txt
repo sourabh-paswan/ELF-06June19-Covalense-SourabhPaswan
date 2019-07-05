@@ -1,0 +1,102 @@
+1.Write a query to display Employee name, his salary along with the designation for all the employee.
+query---> select NAME, SALARY, DEGIGNATION from employee_info group by DEGIGNATION;
+
+2.Write a query to obtain name and his current salary and new salary with a hike 25 % for all the Employee.
+select NAME ,SALARY,SALARY+(SALARY/4) NEW_SALARY from employee_info 
+
+
+3.Write a query to display all the details of the Employee who are working as salesman.
+select NAME, DEGIGNATION from employee_info where DEGIGNATION='salesman'
+
+4.Write a query to display all the employees of Dept.no 20.
+select * from employee_info where DEPT_ID=20
+
+5.Write a query to display all the Employees DOB before 1994.
+
+6.Write a query to display all the employees whose annual salary is less than 30,000.
+select * from employee_info where SALARY*12<30,000
+
+7.Write a query to display name, salary and Annual salary of all the clerks.
+select NAME ,SALARY,SALARY*12 ANNUAL_SALARY from employee_info 
+
+8.Write a query to display all the details of Employee Whoever Hired after Feb of 2013.
+
+9.Write a query to display managers working in deptno 20 only if salary is greater than 2500.
+select * from employee_info WHERE DEGIGNATION='manager' and DEPT_ID=20 and SALARY>2500
+
+10.Write a query to display all the employee excluding Analyst.
+select * from employee_info WHERE DEGIGNATION not in('analyst');
+
+11.Write a query to display all the employees excluding salesman who are working in department 30.
+select * from employee_info WHERE DEGIGNATION not in('analyst') or DEPT_ID NOT IN(30);
+
+12.Write a query to display names of all the employee who are working in dept 30 as manager OR all the names of employee who are working as a clerk and salary less than 2000.
+select * from employee_info where (DEPT_ID=30 and DEGIGNATION='manager') or (DEGIGNATION='clerk' and SALARY<2000);
+
+
+13.Write a query to display all the Employees in dept 20 only if their salary is greater than 1000 and less than 3500, including 1000 & 3500.
+select * from employee_info where DEPT_ID=20 and (SALARY>999 and SALARY<3501);
+
+14.Write a query to display all the details of Employees who are working as clerk in deptno 20,30 or 40.
+select * from employee_info where DEPT_ID=20 or DEPT_ID=30 or DEPT_ID=40;
+
+15.Write a query to display the details of software developer, manager or clerk who are working in dept.  10 or 20 and salary is greater than 1500.
+select * from employee_info where (DEGIGNATION='software developer' or DEGIGNATION='manager' or DEGIGNATION='clerk') and (DEPT_ID=10 or DEPT_ID=20) and SALARY>1500;
+
+
+16. Write a query to display all the details of Employees who are working in department 10,20 excluding all the Salesman and Analyst.
+select * from employee_info where (DEPT_ID=10 and DEPT_ID=20) and DEGIGNATION not in('Salesman','Analyst');
+
+
+17. Write a query to display name, Salary for all the Employees who are working in dept 10 or 20 and their annual salary between 20,000 and 40,000 including the limits.
+select NAME,SALARY from employee_info where DEPT_ID in(10,20) and SALARY in(19999,40001)
+
+
+18.Write a query to display all the details of employees who were hire in the month of September working in dept 20 or 30.
+select * from employee_info where DEPT_ID=20 and DEPT_ID=20 and JOINING_DATE='%%%%-10-%%'
+
+19.Write a query to display their name and DOJ of employee who works as salesman or clerk and their names has at least one S or E.
+select NAME,JOINING_DATE from employee_info where DEGIGNATION='salesman' and NAME like'%S%E%'
+
+
+20.Write a query to display Average salary and Highest salary of dept. 20.
+select AVG(SALARY) from employee_info where DEPT_ID=20
+
+21.Write a query to display date of first and last Hired Employees.
+select MIN(JOINING_DATE), MAX(JOINING_DATE) from employee_info;
+
+
+22.Write a query to display AVG Salary of Employees by excluding president and manager(job).
+select AVG(SALARY) from employee_info WHERE DEGIGNATION NOT IN('president','manager')
+
+
+23.Write a query to display the total salary and average salary of each department
+select SUM(SALARY),AVG(SALARY) from employee_info GROUP BY DEGIGNATION;
+
+
+24.Write a query to find the highest and least salary of an Employee in each job by excluding the employees whose name has ‘R’ as the last but one character.
+select MAX(SALARY),MIN(SALARY) from employee_info WHERE NAME LIKE'%R___' GROUP BY DEGIGNATION
+
+
+26. Write a query to list the employee whose designation are same as Vikas    or Rahul.
+select * from employee_info WHERE DEGIGNATION='Vikas' OR DEGIGNATION='Rahul';
+
+
+27. Write a query to List the employee whose salary is equal to the average of max and minimum.
+
+
+28. Write a query to display employee name, department name and the location of all employee.
+29. Write a query to display all the details of employee whose name begins with the consonants.
+30. Create a Views from Employee_Info table .Views should have all  the record whose salary is greater than 10000.
+31.  Create a trigger which will work before deletion in employee_info table     and create a duplicate copy of the record in another table employee_backup
+32.What is Driver Class?
+	it is use to load the unimplemented methods to connect with driver and make the connection beetween driver to connect database. DB vender gives this driver class for every database.
+
+33.What is DB URL?
+	uniform resource locator is use to idendify the database in nw. eg jdbc:mysql://localhost:3306:databsename?username?passwrd
+
+
+
+
+
+
