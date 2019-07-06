@@ -1,5 +1,14 @@
 package com.covalense.jdbcapp.beans;
 
-public class ExperienceInfoBean {
+import java.util.Date;
 
+import lombok.Data;
+
+@Data
+public class ExperienceInfoBean {
+	private int id;
+	private String companyName;
+	private String designation;
+	private Date joiningDate;
+	private Date leavingDate;
 }

@@ -20,7 +20,6 @@ public class MyFirstJdbcProg {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
 
 		try {
 			// 1. Load the "driver"
@@ -30,11 +29,12 @@ public class MyFirstJdbcProg {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 
 			// 2. Get the DB connection via driver
-			//String dburl = "jdbc:mysql://localhost:3306/covalense_db?user=root&password=root";
-			//con = DriverManager.getConnection(dburl);
+			// String dburl =
+			// "jdbc:mysql://localhost:3306/covalense_db?user=root&password=root";
+			// con = DriverManager.getConnection(dburl);
 			String dburl = "jdbc:mysql://localhost:3306/covalense_db";
-			 con = DriverManager.getConnection(dburl, "root", "root");
-			 log.info("connection impl class===>"+con.getClass());
+			con = DriverManager.getConnection(dburl, "root", "root");
+			log.info("connection impl class===>" + con.getClass());
 			// 3. issues sql queries via connection
 			String query = "select*from employee_info";
 			stmt = con.createStatement();
@@ -59,7 +59,7 @@ public class MyFirstJdbcProg {
 				log.info("MANAGER_ID       ===>" + rs.getInt("MANAGER_ID"));
 			}
 
-		} catch (SQLException | InstantiationException | IllegalAccessException |ClassNotFoundException e) {
+		} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} /*
 			 * finally { // 5. close all"jdbc objects" try { if (con != null) { con.close();

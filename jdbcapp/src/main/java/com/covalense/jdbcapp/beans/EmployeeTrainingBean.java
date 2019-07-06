@@ -1,5 +1,9 @@
 package com.covalense.jdbcapp.beans;
 
-public class EmployeeTrainingBean {
+import lombok.Data;
 
+@Data
+public class EmployeeTrainingBean {
+	private int id;
+	private int courseId;
 }
