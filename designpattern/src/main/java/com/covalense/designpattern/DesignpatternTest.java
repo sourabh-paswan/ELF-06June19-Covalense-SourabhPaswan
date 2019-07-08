@@ -21,15 +21,14 @@ import lombok.extern.java.Log;
 public class DesignpatternTest {
 	public static void main(String[] args) throws ParseException {
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
-		printInfo(dao.getEmployeeInfo(1));
-		//printInfo(dao.getEmployeeInfo(2));
-//		ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfo();
-//		for (EmployeeInfoBean bean : beans) {
-//			printInfo(bean);
-//		}
-		
-		
-		//create an employee info
+		// printInfo(dao.getEmployeeInfo(1));
+		// printInfo(dao.getEmployeeInfo(2));
+		ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfo();
+		for (EmployeeInfoBean bean : beans) {
+			printInfo(bean);
+		}
+
+		// create an employee info
 //		EmployeeInfoBean empInfo = new EmployeeInfoBean();
 //		empInfo.setId(134);
 //		empInfo.setName("sourabh");
@@ -49,8 +48,8 @@ public class DesignpatternTest {
 //		empInfo.setManagerId(789797);
 //		
 //		log.info("inserted the employee info ? ans:  "+dao.createEmployeeInfo(empInfo));
-		log.info("delete the employee info ? ans:  "+dao.deleteEmployeeInfo(133));
-		
+		// log.info("delete the employee info ? ans: "+dao.deleteEmployeeInfo(133));
+
 	}// end of main
 
 	private static void printInfo(EmployeeInfoBean bean) {
