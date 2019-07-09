@@ -17,29 +17,12 @@ public class HibernateCasheTestTwo {
 	}// End of main
 
 	private static EmployeeInfoBean getEmployeeData(int id) {
-		// 1. Load the config file
-		Configuration config = new Configuration();
-		config.configure("com/covalense/hibernateapp/cache/hibernate.cache.cfg.xml");
-		config.addAnnotatedClass(EmployeeNewInfoBean.class);
 
-		// 2. build the session factory
-		SessionFactory factory = config.buildSessionFactory();
-		// 3. open session
-		Session session = factory.openSession();
-		// 4. interact with db via connection
-		EmployeeInfoBean bean = session.get(EmployeeInfoBean.class, 1);
-		log.info("1st " + bean.toString());
+		EmployeeInfoBean bean;
+		try (Session session = HibernateUtilCache.getSessionFactory();) {
+			bean = session.get(EmployeeInfoBean.class, id);
+		}
 
-		EmployeeInfoBean beanTwo = session.get(EmployeeInfoBean.class, 1);
-		log.info("2nd " + bean.toString());
-
-		EmployeeInfoBean beanThree = session.get(EmployeeInfoBean.class, 1);
-		log.info("3rd " + bean.toString());
-
-		EmployeeInfoBean beanFour = session.get(EmployeeInfoBean.class, 1);
-		log.info("4th " + bean.toString());
-		// close session
-		session.close();
-		return beanFour;
-	}
+		return bean;
+	}// End of getEmployeeData
 }// End of class
