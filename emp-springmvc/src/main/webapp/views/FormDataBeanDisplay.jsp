@@ -14,9 +14,9 @@
 </head>
 <body>
 
-	userid:<%=userBean.getUserId()%>
+	userid:<%=userBean.getEmpid()%>
 	<br> 
-	password:<%=userBean.getPassword() %>
+	password:<%=userBean.getPwd() %>
 
 
 </body>

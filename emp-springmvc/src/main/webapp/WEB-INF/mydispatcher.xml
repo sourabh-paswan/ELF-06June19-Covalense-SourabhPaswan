@@ -14,7 +14,16 @@
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="../WEB-INF/views/"></property>
+		<property name="prefix" value="../views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="configLocations"
+			value="classpath:hibernate.cfg.xml"></property>
+		<property name="packagesToScan"
+			value="com.covalense.warehouse.beans"></property>
+	</bean>
+	
+	<bean id="hibernateUtil" class="com.covalense.emp.util.HibernateUtil"></bean>
 </beans>
