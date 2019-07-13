@@ -1,0 +1,21 @@
+.demo{
+    color: blueviolet;
+}
+#name{
+    color: aqua;
+}
+#age{
+    font-size: 30px;
+
+}
+.button{
+    color: aqua;
+    border-radius: 4%;
+}
+.button1{
+    color: brown;
+    border-radius: 42%;
+}
+.blue{
+    font-family: 'Courier New', Courier, monospace;
+}

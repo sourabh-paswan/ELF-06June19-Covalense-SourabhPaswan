@@ -64,8 +64,8 @@
 //     console.log(new Date(0))
 
 
-    // var hobbies = ['sleeping','watching movies','roaming'];
-    // document.getElementById("demo").innerHTML = hobbies;
+     var hobbies = ['sleeping','watching movies','roaming'];
+     document.getElementById("demo").innerHTML = hobbies;
 
     // var person ={
     //             firstname : 'sourabh',
