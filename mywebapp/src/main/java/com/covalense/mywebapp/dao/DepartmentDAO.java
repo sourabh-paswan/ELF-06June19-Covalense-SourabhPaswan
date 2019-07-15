@@ -11,11 +11,11 @@ public interface DepartmentDAO {
 
 	DepartmentInfoBean getEmployeeInfo(int id);
 
-	boolean createEmployeeInfo(DepartmentInfoBean bean);
+	boolean createDepartmentInfo(DepartmentInfoBean bean);
 
-	boolean updateEmployeeInfo(DepartmentInfoBean bean);
+	boolean updateDepartmentInfo(DepartmentInfoBean bean);
 
-	boolean deleteEmployeeInfo(int id);
+	boolean deleteDepartmentInfo(int id);
 
-	boolean deleteEmployeeInfo(String id);
+	boolean deleteDepartmentInfo(String id);
 }

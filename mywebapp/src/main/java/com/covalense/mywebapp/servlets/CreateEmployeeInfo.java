@@ -54,6 +54,12 @@ public class CreateEmployeeInfo extends HttpServlet {
 		boolean saveemp = dao.createEmployeeInfo(empInfo);
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
-
+		if (saveemp == true) {
+			out.print("<HTML>");
+			out.print("<BODY>");
+			out.print("<H1><SPAN STYLE=\"color: red\"> employee created..</span>");
+			out.print("</BODY>");
+			out.print("</HTML>");
+		}
 	}
 }

@@ -19,6 +19,7 @@ public interface EmployeeDAO {
 	boolean deleteEmployeeInfo(int id);
 
 	boolean deleteEmployeeInfo(String id);
+	
 		
 	
 }

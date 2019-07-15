@@ -4,13 +4,61 @@
 
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
+	<context-param>
+		<param-name>movie</param-name>
+		<param-value>sholay</param-value>
 
+	</context-param>
 	<servlet>
 		<servlet-name>myFirstServlet</servlet-name>
 		<servlet-class>com.covalense.mywebapp.servlets.MyFirstServlet</servlet-class>
+		<init-param>
+			<param-name>actor</param-name>
+			<param-value>gabbar singh</param-value>
+		</init-param>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>EmployeeSeachServlet</servlet-name>
+		<servlet-class>com.covalense.mywebapp.servlets.EmployeeSeachServlet</servlet-class>
+		<init-param>
+			<param-name>actor</param-name>
+			<param-value>gabbar singh</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>RedirectServlet</servlet-name>
+		<display-name>RedirectServlet</display-name>
+		<description></description>
+		<servlet-class>com.covalense.mywebapp.servlets.RedirectServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RedirectServlett</servlet-name>
+		<display-name>RedirectServlett</display-name>
+		<description></description>
+		<servlet-class>com.covalense.mywebapp.servlets.RedirectServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ForwardServlet</servlet-name>
+		<display-name>ForwardServlet</display-name>
+		<description></description>
+		<servlet-class>com.covalense.mywebapp.servlets.ForwardServlet</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>myFirstServlet</servlet-name>
 		<url-pattern>/currentDate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RedirectServlet</servlet-name>
+		<url-pattern>/RedirectServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RedirectServlett</servlet-name>
+		<url-pattern>/redirect</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ForwardServlet</servlet-name>
+		<url-pattern>/forward</url-pattern>
 	</servlet-mapping>
 </web-app>
