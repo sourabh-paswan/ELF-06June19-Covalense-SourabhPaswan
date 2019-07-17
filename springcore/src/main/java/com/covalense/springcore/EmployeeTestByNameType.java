@@ -12,7 +12,7 @@ public class EmployeeTestByNameType {
 
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("EmployeebyType2.xml");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("EmployeebyConstructorWiring.xml");
 
 		// ApplicationContext applicationContext = new
 		// ClassPathXmlApplicationContext("Employeebyname.xml");

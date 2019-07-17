@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employeeInfoBean1"
+		class="com.covalense.springcore.beans.EmployeeInfoBean" autowire="constructor">
+		<constructor-arg name="name" value="sourabhji" ></constructor-arg>
+		<constructor-arg name="salary" value="787888" ></constructor-arg>
+	</bean>
+	
+	<bean id="diffrent1"
+		class="com.covalense.springcore.beans.DepartmentBean" autowire-candidate="false">
+		<property name="dpartmentID" value="123"></property>
+		<property name="dName" value="IT"></property>
+	</bean>
+	
+	<bean id="diffrent2"
+		class="com.covalense.springcore.beans.DepartmentBean" autowire-candidate="false">
+		<property name="dpartmentID" value="123"></property>
+		<property name="dName" value="IT"></property>
+	</bean>
+	<bean id="diffrent3"
+		class="com.covalense.springcore.beans.DepartmentBean">
+		<property name="dpartmentID" value="123"></property>
+		<property name="dName" value="IT"></property>
+	</bean>
+	
+</beans>

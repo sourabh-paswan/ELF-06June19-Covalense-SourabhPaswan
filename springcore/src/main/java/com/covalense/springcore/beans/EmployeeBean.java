@@ -4,25 +4,28 @@ import java.io.Serializable;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import lombok.extern.java.Log;
 
 @Log
-public class EmployeeInfoBean implements InitializingBean, DisposableBean, Serializable {
+public class EmployeeBean implements InitializingBean, DisposableBean, Serializable {
 	private String name;
 	private int salary;
+	@Autowired
+	@Qualifier("it")
 	private DepartmentBean departmentBean;
 
 	public DepartmentBean getDepartmentBean() {
 		return departmentBean;
 	}
 
-	public EmployeeInfoBean(String name, int salary, DepartmentBean departmentBean) {
-		super();
-		this.name = name;
-		this.salary = salary;
-		this.departmentBean = departmentBean;
-	}
+	/*
+	 * public EmployeeBean(String name, int salary, DepartmentBean departmentBean) {
+	 * super(); this.name = name; this.salary = salary; this.departmentBean =
+	 * departmentBean; }
+	 */
 
 	public void setDepartmentBean(DepartmentBean departmentBean) {
 		this.departmentBean = departmentBean;
