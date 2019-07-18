@@ -6,6 +6,7 @@ import AdminHomepage from './components/homepage/AdminHomepage';
 import Login from './components/login/Login'
 import { UserHome } from './components/homepage/Userhome';
 import { LibrarianHome } from './components/homepage/LibrarianHome';
+import CreateUser from './components/createUser/CreateUser';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route exact path='/adminhomepage' component={AdminHomepage}/>
       <Route exact path='/librarianhomepage' component={LibrarianHome}/>
       <Route exact path='/userhomepage' component={UserHome}/>
+      <Route exact path='/createuser' component={CreateUser}/>
     </Router>
   );
 }

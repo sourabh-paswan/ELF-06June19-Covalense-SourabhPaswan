@@ -72,6 +72,15 @@ export default class Login extends Component {
           <h1>ABC Libarary</h1>
             <h3>User Login</h3>
             <form onSubmit={this.getAccount.bind(this)} method="post">
+              <div className="form-group">
+              <label htmlFor="user" className="form-group" >User Type</label>
+                <select className="form-group"  onChange={(event)=>{this.setState({userType:event.target.value})}} value={this.state.userType} type="text" name="userType" > 
+                <option selected >Select</option>
+                      <option selected value="user">User</option>
+                      <option value="admin">Admin</option>
+                     <option value="librarian">Librarian</option>
+                </select>
+            </div>
             <div className="form-group">
               <input onChange={(event)=>{this.setState({userId:event.target.value})}} value={this.state.userId} type="text" className="form-control" placeholder="Your Id"  />
             </div>
@@ -82,9 +91,9 @@ export default class Login extends Component {
               <input type="submit" className="btnSubmit" defaultValue="Login" />
             </div> */}
 
-            <button type="submit" 
-                     className="form-control btn btn-outline-secondary"
-                     >Login</button>
+            <div className="group">
+                    <input type="submit" className="button" defaultValue="Sign In" />
+                  </div>
             <div className="form-group">
               <a href="#" className="btnForgetPwd" value="Login">Forget Password?</a>
             </div>
