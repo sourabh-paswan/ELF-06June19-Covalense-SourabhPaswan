@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employeeInfoBean1"
+		class="com.covalense.springcore.beans.EmployeeInfoBean">
+		<property name="name" value="sourabh"></property>
+		<property name="salary" value="45454"></property>
+		<property name="departmentBean" ref="departmentbean"></property>
+	</bean>
+	
+	<bean id="departmentbean"
+		class="com.covalense.springcore.beans.DepartmentBean">
+		<property name="dpartmentID" value="123"></property>
+		<property name="dName" value="IT"></property>
+	</bean>
+</beans>

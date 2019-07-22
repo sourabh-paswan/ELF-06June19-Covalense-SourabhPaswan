@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employee-info>
+	<emp-id>123</emp-id>
+	<emp-name>sourabh</emp-name>
+	<emp-age>24</emp-age>
+	<emp-designation>software engineer</emp-designation>
+	<emp-email>abc@xyz.com</emp-email>
+	<emp-address>
+	<emp-address ADD-TYPE="PERMANENT" ADD-TYPE2="PERMANENT">
+		<addr-type>present</addr-type>
+		<address1>btm 1st</address1>
+		<address2>16th main rd</address2>
+		<landmark>sbi bank</landmark>
+		<city>bangalore</city>
+		<state>karnataka</state>
+		<pincode>560029</pincode>
+	</emp-address>
+	<emp-address>
+		<addr-type>permanent</addr-type>
+		<address1>btm 1st</address1>
+		<address2>16th main rd</address2>
+		<landmark>sbi bank</landmark>
+		<city>bangalore</city>
+		<state>karnataka</state>
+		<pincode>560029</pincode>
+	</emp-address>
+	<welcome-message><![CDATA[<html><b><i><u>
+		Welcome to Covalense !!!
+		</u></i></b></html>]]>
+		
+	</welcome-message>
+	<welcome-message>
+		<html><b><i><u>
+		Welcome to Covalense !!!
+		</u></i></b></html>
+	</welcome-message>
+	<welcome-message>
+		&lt;html&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;
+		Welcome to Covalense !!!
+		&lt;/u&gt;&lt;/i&gt;&lt;/b&gt;&lt;/html&gt;
+	</welcome-message>
+</employee-info>
