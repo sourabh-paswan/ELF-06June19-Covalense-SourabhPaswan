@@ -1,5 +1,7 @@
 package com.covalense.hibernateapp.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +11,7 @@ import lombok.Data;
 @Entity
 @Table(name="employee_otherinfo")
 @Data
-public class EmployeeOtherInfoBean {
+public class EmployeeOtherInfoBean implements Serializable {
 	@Id
 	@Column(name="ID")
 	private int id;
