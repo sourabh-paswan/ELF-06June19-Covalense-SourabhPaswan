@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Login to Employee Management Portal</title>
+<title>Login</title>
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -37,31 +37,30 @@ ${msg}
 
 
 
-	<form action="./authenticate" method="post">
+	<form action="./authenticate" method="POST">
 		<div class="col-md-4 offset-2 text-black"
 			style="background: rgb(32, 165, 87)">
 			<div class="card-body">
-				<h6 class="text-center">welcome</h6>
+				<h6 class="text-center">Employee Managment Portal</h6>
 			</div>
 		</div>
 		<div class="col-md-4 offset-2 text-black"
 			style="background: lightblue">
 			<div class="card-body">
-				<h4 class="text-center">Employee Managment Portal</h4>
 
 				<div class="form-group">
-					<label for="name">Emp Id</label> <input type="text" id="empid"
-						name="empid" placeholder="Enter Employee Id" class="form-control">
+					<label for="name">Employee ID</label> <input type="text" id="empid"
+						name="id" placeholder="Enter Employee ID" class="form-control">
 				</div>
 				<div class="form-group">
 					<label for="name">Password</label> <input type="password" id="pwd"
-						name="pwd" placeholder="Password" class="form-control">
+						name="pwd" placeholder="Enter Password" class="form-control">
 				</div>
 				<div class="row">
 					<div class="col">
 						<br>
 						<button type="submit"
-							class="form-control btn btn-outline-secondary">Submit</button>
+							class="form-control btn btn-outline-secondary">Login</button>
 					</div>
 
 					<div class="col">
@@ -75,7 +74,7 @@ ${msg}
 					<div class="col">
 						<br>
 						<button type="button" class="form-control btn btn-outline-success"
-							onclick="location.href='./createEmployee.html'">Create
+							onclick="location.href='../login/createEmployee'">Create
 							Account</button>
 					</div>
 

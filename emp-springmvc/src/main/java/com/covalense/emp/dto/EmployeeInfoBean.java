@@ -1,42 +1,53 @@
 package com.covalense.emp.dto;
 
 import java.io.Serializable;
-
-/*
-EMPLOYEE_INFO
--------------
-ID (PK) 	(INT)
-DEPT_ID	(FK)(INT)
-MNGR_ID		(INT)
-NAME		(VARCHAR)
-AGE			(INT)
-GENDER		(VARCHAR)
-JOINING_DATE	(DATE)
-EMAIL			(VARCHAR)
-ACCOUNT_NUMBER	(LONG)
-PHONE_NUMBER	(LONG)
-SALARY			(DOUBLE)
-DESIGNATION		(VARCHAR)
-DOB				(DATE)
-
-*/
-
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import lombok.Data;
 
+@SuppressWarnings("serial")
+@Data
 @Entity
 @Table(name = "employee_info")
-@Data
 public class EmployeeInfoBean implements Serializable {
+
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "infoBean")
+	private EmployeeOtherInfoBean employeeOtherInfoBean;
+	
+
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "addressPkBean.infoBean")
+	private List<EmployeeAddressInfoBean> addressInfoBean;
+	
+	
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "educationPkBean.infoBean")
+	private List<EmployeeEducationInfoBean> educationInfoBean;
+	
+
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "experiencePKBean.infoBean")
+	private List<ExperienceInfoBean> experienceInfoBeans;
+	
+
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "infoBeans")
+	private List<TrainingInfoBean> trainingInfoBean;
 
 	@Id
 	@Column(name = "ID")
@@ -52,7 +63,7 @@ public class EmployeeInfoBean implements Serializable {
 	private String gender;
 
 	@Column(name = "SALARY")
-	private double salary;
+	private int salary;
 
 	@Column(name = "PHONE")
 	private long phone;
@@ -72,13 +83,15 @@ public class EmployeeInfoBean implements Serializable {
 	@Column(name = "DOB")
 	private Date dob;
 
-	@Column(name = "DEPT_ID")
-	private int departmentId;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DEPT_ID")
+	private DepartmentInfoBean departmentInfoBean;
 
-	@Column(name = "MANAGER_ID")
-	private int managerId;
+	@ManyToOne
+	@JoinColumn(name = "MANAGER_ID", referencedColumnName = "ID")
+	private EmployeeInfoBean managerId;
 
 	@Column(name = "password")
-	private String password;
+	private int password;
 
-}// end of class
+}

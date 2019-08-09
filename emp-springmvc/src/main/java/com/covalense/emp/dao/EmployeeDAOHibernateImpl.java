@@ -13,7 +13,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.covalense.emp.dto.EmployeeInfoBean;
-import com.covalense.emp.util.HibernateUtil;
 
 import lombok.extern.java.Log;
 
