@@ -8,8 +8,9 @@ export default class Login extends Component {
       super(props);
   
       this.state = {
-        userId: "",
-        password: ""
+        userId: '',
+        password: '',
+        userType:''
       };
     }
   
@@ -36,15 +37,22 @@ export default class Login extends Component {
       {
       params:{
         userId:this.state.userId,
-        password:this.state.password
+        password:this.state.password,
+        userType:this.state.userType
         }
       }
       ).then((response)=>{
-          console.log('Response object',response.data.usersBeans[0]);
-          console.log(JSON.stringify(response.data.usersBeans[0]));
-          localStorage.setItem("empdata",JSON.stringify(response.data.usersBeans[0]));
+          //console.log('Response object',response.data.usersBeans[0]);
+          //console.log(JSON.stringify(response.data.usersBeans[0]));
+          //localStorage.setItem("empdata",JSON.stringify(response.data.usersBeans[0]));
           //console.log(JSON.stringify)
-       this.props.history.push("/homepage");
+          if(this.state.userType==='admin'){
+       this.props.history.push("/adminhomepage");
+      }else if(this.state.userType==='librarian'){
+        this.props.history.push("/librarianhomepage");
+      }else if(this.state.userType==='user') {
+        this.props.history.push("/userhomepage");
+      }
   
       }).catch((error)=>{
           console.log('Error',error)
@@ -61,7 +69,7 @@ export default class Login extends Component {
         <div className="row">
           
           <div className="col-md-6 login-form-2">
-            
+          <h1>ABC Libarary</h1>
             <h3>User Login</h3>
             <form onSubmit={this.getAccount.bind(this)} method="post">
             <div className="form-group">
@@ -76,7 +84,7 @@ export default class Login extends Component {
 
             <button type="submit" 
                      className="form-control btn btn-outline-secondary"
-                     >Submit</button>
+                     >Login</button>
             <div className="form-group">
               <a href="#" className="btnForgetPwd" value="Login">Forget Password?</a>
             </div>
